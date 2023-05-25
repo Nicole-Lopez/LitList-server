@@ -1,0 +1,21 @@
+# Node.js / TypeScript
+node_modules/
+dist/
+
+# Environment variables
+.env
+
+# Editor / IDE specific files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Build artifacts and logs
+build/
+logs/
+
+# Miscellaneous
+*.log
+.DS_Store
