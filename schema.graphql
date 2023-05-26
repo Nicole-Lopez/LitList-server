@@ -1,0 +1,21 @@
+type BookPreview {
+	id: String,
+	selfLink: String,
+	title: String,
+	authors: [String],
+	cover: String	
+}
+
+
+type BestSellersListResponse {
+    last_modified: String,
+	books: [BookPreview]
+}
+
+
+type Query {
+    bestSellersList(listName: String): BestSellersListResponse      
+}
+
+
+
