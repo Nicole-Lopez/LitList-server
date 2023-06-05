@@ -1,3 +1,6 @@
 dist
 node_modules/
 build/
+codegen.yml
+*.graphql
+resolvers-types.ts

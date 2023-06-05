@@ -1,21 +1,57 @@
 type BookPreview {
 	id: String,
-	selfLink: String,
 	title: String,
 	authors: [String],
-	cover: String	
+	cover: String,
+	publishedYear: Int,
+	pageCount: Int,
+	categories: [String],
+	isbn: [String]
 }
 
+type BookSlide {
+	id: String!,
+	title: String!,
+	authors: [String!]!,
+	cover: String!
+}
 
-type BestSellersListResponse {
+type BookSlider {
+	author: String!,
+	content: [BookSlide!]!
+}
+
+type BestSellersSlider {
     last_modified: String,
-	books: [BookPreview]
+	books: [BookSlide]
+}
+
+type BookAdditionalInfo {
+	title: String,
+	info: String
+}
+
+type BookSubjects {
+	type: String,
+	value: [String]
+}
+
+type BookDetail {
+	title: String!,
+	subtitle: String,
+	authors: [String!]!,
+	cover: String,
+	description: String,
+	additionalInfo: [BookAdditionalInfo],
+	subjects: [BookSubjects]
 }
 
 
 type Query {
-    bestSellersList(listName: String): BestSellersListResponse      
+    bestSellersList(listName: String!): BestSellersSlider,
+    bookDetail(id: String!): BookDetail,
+    booksByAuthor(author: String!): BookSlider,
+    searchBooks(term: String!): [BookPreview],   
+    booksBySubject(subject: String!): [BookPreview],
+    findBookId(title: String!, author: String!): String
 }
-
-
-

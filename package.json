@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "co": "tsc --watch",
+    "compile": "tsc --watch",
     "generate": "graphql-codegen --config codegen.yml",
     "start": "pnpm run compile && node ./dist/index.js",
     "dev": "nodemon ./dist/index.js"
